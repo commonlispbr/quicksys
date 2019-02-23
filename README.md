@@ -28,7 +28,7 @@ Suppose we want to use the nice shinmera softwares, so what you need
 is to subscribe to shinmera own distribution list.
 
 ``` lisp
-(ql-meta:subscribe 'shimera)
+(ql-meta:subscribe 'shinmera)
 ```
 
 That will install the distribution based on quicklisp-client. So you
