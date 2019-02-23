@@ -2,13 +2,6 @@
 
 Manoel Vilela & Lucas Vieira © 2019 MIT
 
-Main usage should be defined as:
-
-(ql:dist-apropos search-str)
-(ql:subscribe dist-name)
-(ql:unsubscribe dist-name)
-(ql:purge dist-name)
-
 |#
 
 (in-package #:ql-meta)
