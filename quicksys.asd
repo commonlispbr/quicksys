@@ -1,13 +1,13 @@
 ;;;; quicksys.asd
 
 (asdf:defsystem #:quicksys
-    :description "QUICKSYS tracks multiple Quicklisp distributions"
+    :description "QUICKSYS install systems from multiple Quicklisp distributions"
     :author "Manoel Vilela & Lucas Vieira"
     :license  "MIT"
     :version "0.1.0"
-    :homepage "https://github.com/commonlispbr/quicklisp-meta"
-    :bug-tracker "https://github.com/commonlispbr/quicklisp-meta/issues"
-    :source-control (:git "https://github.com/commonlispbr/quicklisp-meta.git")
+    :homepage "https://github.com/commonlispbr/quicksys"
+    :bug-tracker "https://github.com/commonlispbr/quicksys/issues"
+    :source-control (:git "https://github.com/commonlispbr/quicksys.git")
     :serial t
     :pathname "src"
     :depends-on (:quicklisp)
