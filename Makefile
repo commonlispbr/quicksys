@@ -9,6 +9,11 @@ check:
 docs:
 	rm -rf doc/
 	@$(LISP) docs.lisp
+	@if which tidy > /dev/null; then \
+		echo Formatting HTML...; \
+		tidy -i -q -o doc/index.html \
+            doc/index.html || echo Finished!; \
+	fi
 
 ci-check:
 	@docker run -t --entrypoint=/usr/bin/sbcl \
