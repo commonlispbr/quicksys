@@ -1,1 +1,4 @@
 system-index.txt
+doc/
+tmp/
+*.fasl
