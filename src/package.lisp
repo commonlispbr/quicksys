@@ -1,12 +1,12 @@
 ;;;; package.lisp
 
-(defpackage #:ql-meta
+(defpackage #:quicksys
   (:use #:cl)
-  (:nicknames :qlm)
+  (:nicknames :qs)
   (:export #:*dists*
-           #:install
+           #:install-dist
            #:installedp
-           #:uninstall
+           #:uninstall-dist
            #:dist-name
            #:dist-url
            #:dist-properties
@@ -17,22 +17,23 @@
            #:dist-apropos-list
            #:quickload)
   (:documentation
-   "QL-META provides a collection of tools to handle multiple quicklisp dists.
+   "QUICKSYS provides a collection of tools to load systems from
+   multiple quicklisp dists.
 
 EXAMPLES
 
 ;; search for a dist
-* (ql-meta:dist-apropos '*)
+* (quicksys:dist-apropos '*)
 #<DIST BODGE / http://bodge.borodust.org/dist/org.borodust.bodge.txt>
 #<DIST CL21 / http://dists.cl21.org/cl21.txt>
 #<DIST ULTRALISP / http://dist.ultralisp.org>
 #<DIST SHIRAKUMO / http://dist.tymoon.eu/shirakumo.txt>
 
 ;; install a dist
-* (ql-meta:install :ultralisp)
+* (quicksys:install :ultralisp)
 
 
 ;; install a dist temporary just to load a system
-* (ql-meta:quickload 'trivial-gamekit :dist 'bodge )
+* (quicksys:quickload 'trivial-gamekit :dist 'bodge )
 "
    ))
