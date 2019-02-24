@@ -1,65 +1,327 @@
-<!DOCTYPE html> <html lang="EN"> <head> <meta charset="utf-8"> <title>Ql Meta</title> <style>html body{margin:0 auto 0 auto;padding:20px;max-width:1024px;font-family:sans-serif;font-size:14pt;overflow-y:scroll;}html body a{text-decoration:none;}html body a[href]{color:#0055AA;}html body a[href]:hover{color:#0088EE;}html body pre{background:#FAFAFA;border:1px solid #DDDDDD;padding:0.75em;overflow-x:auto;}html body pre >code a[href]{color:#223388;}article.project h1,article.project h2,article.project h3,article.project h4,article.project h5,article.project h6{margin:0.2em 0 0.1em 0;text-indent:1em;}article.project >header{text-align:center;}article.project >header img.logo{display:block;margin:auto;max-height:170px;}article.project >header h1{display:inline-block;text-indent:0;font-size:2.5em;}article.project >header .version{vertical-align:bottom;}article.project >header .languages{margin-top:-0.5em;text-transform:capitalize;}article.project >header .description{margin:0;}article.project >header .pages{margin-top:0.5em;font-size:1.2em;text-transform:capitalize;}article.project >header .pages a{display:inline-block;padding:0 0.2em;}article.project >section{margin:1em 0 1em 0;}article.project #index >ul{list-style:none;margin:0;padding:0;}article.project .row label{display:inline-block;min-width:6em;}article.project #system .row{display:flex;}article.project #system #dependencies{display:inline;margin:0;padding:0;}article.project #system #dependencies li{display:inline;padding:0 0.2em;}article.definition{margin:1em 0 0 0;}article.definition >header h1,article.definition >header h2,article.definition >header h3,article.definition >header h4,article.definition >header h5,article.definition >header h6{text-indent:0;display:inline-block;}article.definition >header ul{display:inline-block;list-style:none;margin:0;padding:0;}article.definition >header ul li{display:inline-block;padding:0 0.2em 0 0;}article.definition >header .visibility{display:none;}article.definition >header .visibility,article.definition >header .type{text-transform:lowercase;}article.definition >header .source-link{visibility:hidden;float:right;}article.definition >header .source-link:after{visibility:visible;content:"[SRC]";}article.definition .docstring{margin:0 0 0 1em;}article.definition .docstring pre{font-size:0.8em;white-space:pre-wrap;}.definition.package >header ul.nicknames{display:inline-block;list-style:none;margin:0;padding:0 0 0 1em;}.definition.package >header ul.nicknames li{display:inline;}.definition.package >header ul.nicknames:before{content:"(";}.definition.package >header ul.nicknames:after{content:")";}.definition.package ul.definitions{margin:0;list-style:none;padding:0 0 0 0.5em;}.definition.callable >header .name:before,.definition.type >header .name:before{content:"(";font-weight:normal;}.definition.callable >header .arguments:after,.definition.type >header .arguments:after{content:")";}.definition.callable >header .arguments .arguments:before,.definition.type >header .arguments .arguments:before{content:"(";}.definition.callable >header .arguments .argument,.definition.type >header .arguments .argument{padding:0;}.definition.callable >header .arguments .argument.lambda-list-keyword,.definition.type >header .arguments .argument.lambda-list-keyword{color:#991155;}.definition li>mark{background:none;border-left:0.3em solid #0088EE;padding-left:0.3em;display:block;}</style> </head> <body> <article class="project"> <header>  <h1>quicklisp-meta</h1>  <span class="version">0.1.0</span>  <nav class="languages">  <a href="index.html">English</a>    </nav>  <p class="description"></p>  <nav class="pages">  <a href="index.html">ql meta</a>  </nav> </header> <section id="documentation"> </section>   <section id="system"> <h2>System Information</h2>  <div class="row"> <label for="version">Version:</label> <a id="version">0.1.0</a> </div>      </section>   <section id="index"> <h2>Definition Index</h2> <ul> <li> <article class="definition package" id="PACKAGE QL-META"> <header> <h3> <a href="#PACKAGE%20QL-META">QL-META</a> </h3> <ul class="nicknames"></ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> <ul class="definitions"> <li> <article class="definition special-variable" id="VARIABLE QL-META:*DISTS*"> <header> <span class="visibility">EXTERNAL</span> <span class="type">SPECIAL-VARIABLE</span> <h4 class="name"> <a href="#VARIABLE%20QL-META%3A%2ADISTS%2A">*DISTS*</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"></ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#12:1">Source</a>  </header> <div class="docstring"><pre>*DISTS* it's PLIST of distributions available in QL-META</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:GET-DIST"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AGET-DIST">GET-DIST</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument">DIST-NAME</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#33:1">Source</a>  </header> <div class="docstring"><pre>GET-DIST retreive a DIST based on dist-name</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:GET-DIST-PROPERTIES"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AGET-DIST-PROPERTIES">GET-DIST-PROPERTIES</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument">DIST</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#39:1">Source</a>  </header> <div class="docstring"><pre>GET-LIST-PROPERTIES return a list of properties</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:GET-DIST-URL"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AGET-DIST-URL">GET-DIST-URL</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument">DIST</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#44:1">Source</a>  </header> <div class="docstring"><pre>GET-DIST-URL return the :url of a DIST</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:GET-DISTS-NAMES"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AGET-DISTS-NAMES">GET-DISTS-NAMES</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument lambda-list-keyword">&amp;OPTIONAL</li>    <li class="argument">DISTS</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#55:1">Source</a>  </header> <div class="docstring"><pre>GET-DISTS-NAMES return the urls defined in *DISTS*</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:GET-DISTS-URLS"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AGET-DISTS-URLS">GET-DISTS-URLS</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument lambda-list-keyword">&amp;OPTIONAL</li>    <li class="argument">DISTS</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#49:1">Source</a>  </header> <div class="docstring"><pre>GET-DISTS-URLS return the urls defined in *DISTS*</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:INSTALL"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AINSTALL">INSTALL</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument">DIST-NAME</li>    <li class="argument lambda-list-keyword">&amp;KEY</li>    <li class="argument">FORCE</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#65:1">Source</a>  </header> <div class="docstring"><pre>INSTALL a DIST-NAME using QL-DIST
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta charset="utf-8">
+        <title>quicklisp-meta</title>
+        <style>html body{margin:0 auto 0 auto;padding:20px;max-width:1024px;font-family:sans-serif;font-size:14pt;overflow-y:scroll;}html body a{text-decoration:none;}html body a[href]{color:#0055AA;}html body a[href]:hover{color:#0088EE;}html body pre{background:#FAFAFA;border:1px solid #DDDDDD;padding:0.75em;overflow-x:auto;}html body pre >code a[href]{color:#223388;}article.project h1,article.project h2,article.project h3,article.project h4,article.project h5,article.project h6{margin:0.2em 0 0.1em 0;text-indent:1em;}article.project >header{text-align:center;}article.project >header img.logo{display:block;margin:auto;max-height:170px;}article.project >header h1{display:inline-block;text-indent:0;font-size:2.5em;}article.project >header .version{vertical-align:bottom;}article.project >header .languages{margin-top:-0.5em;text-transform:capitalize;}article.project >header .description{margin:0;}article.project >header .pages{margin-top:0.5em;font-size:1.2em;text-transform:capitalize;}article.project >header .pages a{display:inline-block;padding:0 0.2em;}article.project >section{margin:1em 0 1em 0;}article.project #index >ul{list-style:none;margin:0;padding:0;}article.project .row label{display:inline-block;min-width:6em;}article.project #system .row{display:flex;}article.project #system #dependencies{display:inline;margin:0;padding:0;}article.project #system #dependencies li{display:inline;padding:0 0.2em;}article.definition{margin:1em 0 0 0;}article.definition >header h1,article.definition >header h2,article.definition >header h3,article.definition >header h4,article.definition >header h5,article.definition >header h6{text-indent:0;display:inline-block;}article.definition >header ul{display:inline-block;list-style:none;margin:0;padding:0;}article.definition >header ul li{display:inline-block;padding:0 0.2em 0 0;}article.definition >header .visibility{display:none;}article.definition >header .visibility,article.definition >header .type{text-transform:lowercase;}article.definition >header .source-link{visibility:hidden;float:right;}article.definition >header .source-link:after{visibility:visible;content:"[SRC]";}article.definition .docstring{margin:0 0 0 1em;}article.definition .docstring pre{font-size:0.8em;white-space:pre-wrap;}.definition.package >header ul.nicknames{display:inline-block;list-style:none;margin:0;padding:0 0 0 1em;}.definition.package >header ul.nicknames li{display:inline;}.definition.package >header ul.nicknames:before{content:"(";}.definition.package >header ul.nicknames:after{content:")";}.definition.package ul.definitions{margin:0;list-style:none;padding:0 0 0 0.5em;}.definition.callable >header .name:before,.definition.type >header .name:before{content:"(";font-weight:normal;}.definition.callable >header .arguments:after,.definition.type >header .arguments:after{content:")";}.definition.callable >header .arguments .arguments:before,.definition.type >header .arguments .arguments:before{content:"(";}.definition.callable >header .arguments .argument,.definition.type >header .arguments .argument{padding:0;}.definition.callable >header .arguments .argument.lambda-list-keyword,.definition.type >header .arguments .argument.lambda-list-keyword{color:#991155;}.definition li>mark{background:none;border-left:0.3em solid #0088EE;padding-left:0.3em;display:block;}</style>
+    </head>
+    <body>
+        <article class="project">
+            <header>
+                <h1>ql-meta</h1>
+                <span class="version">0.1.0</span>
+                <nav class="languages">  <a href="index.html">English</a>    </nav>
+                <p class="description"></p>
+                <nav class="pages">  <a href="index.html">ql meta</a>  </nav>
+            </header>
+            <section id="documentation"> </section>
+            <section id="system">
+                <h2>System Information</h2>
+                <div class="row"> <label for="version">Version:</label> <a id="version">0.1.0</a> </div>
+            </section>
+            <section id="index">
+                <h2>Definition Index</h2>
+                <ul>
+                    <li>
+                        <article class="definition package" id="PACKAGE QL-META">
+                            <header>
+                                <h3> <a href="#PACKAGE%20QL-META">QL-META</a> </h3>
+                                <ul class="nicknames">
+                                    <li>QLM</li>
+                                </ul>
+                            </header>
+                            <div class="docstring">
+                                <pre>QL-META provides a collection of tools to handle multiple quicklisp dists.
+
+                  EXAMPLES
+
+                  ;; search for a dist
+                  * (ql-meta:dist-apropos '*)
+                  #&lt;DIST BODGE / http://bodge.borodust.org/dist/org.borodust.bodge.txt&gt;
+                  #&lt;DIST CL21 / http://dists.cl21.org/cl21.txt&gt;
+                  #&lt;DIST ULTRALISP / http://dist.ultralisp.org&gt;
+                  #&lt;DIST SHIRAKUMO / http://dist.tymoon.eu/shirakumo.txt&gt;
+
+                  ;; install a dist
+                  * (ql-meta:install :ultralisp)
+
+
+                  ;; install a dist temporary just to load a system
+                  * (ql-meta:quickload 'trivial-gamekit :dist 'bodge )
+              </pre>
+                            </div>
+                            <ul class="definitions">
+                                <li>
+                                    <article class="definition special-variable" id="VARIABLE QL-META:*DISTS*">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">SPECIAL-VARIABLE</span>
+                                            <h4 class="name"> <a href="#VARIABLE%20QL-META%3A%2ADISTS%2A">*DISTS*</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments"></ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#12:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>*DISTS* it's a ALIST with PLIST of distributions available in QL-META</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:DIST-PROPERTIES">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3ADIST-PROPERTIES">DIST-PROPERTIES</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">DIST</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#39:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>GET-LIST-PROPERTIES return a list of properties</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:DIST-URL">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3ADIST-URL">DIST-URL</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">DIST</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#44:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>DIST-URL return the :url of a DIST</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:GET-DIST">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3AGET-DIST">GET-DIST</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">DIST-NAME</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#49:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>GET-DIST retrieve a DIST based on DIST-NAME</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:GET-DISTS-NAMES">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3AGET-DISTS-NAMES">GET-DISTS-NAMES</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument lambda-list-keyword">&amp;OPTIONAL</li>
+                                                <li class="argument">DISTS</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#60:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>GET-DISTS-NAMES return the names defined in *DISTS*</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:GET-DISTS-URLS">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3AGET-DISTS-URLS">GET-DISTS-URLS</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument lambda-list-keyword">&amp;OPTIONAL</li>
+                                                <li class="argument">DISTS</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#54:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>GET-DISTS-URLS return the urls defined in *DISTS*</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:INSTALL">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3AINSTALL">INSTALL</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">DIST-NAME</li>
+                                                <li class="argument lambda-list-keyword">&amp;KEY</li>
+                                                <li class="argument">FORCE</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#70:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>INSTALL a DIST-NAME using QL-DIST
 
                         As default use the parameters (:prompt nil :replace t) on
                         ql-dist:install-dist to avoid human interation.
 
                         If DIST-NAME didn't exists as key of *DISTS* this function
                         will raises a error.
-                </pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:INSTALLEDP"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AINSTALLEDP">INSTALLEDP</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument">DIST</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#60:1">Source</a>  </header> <div class="docstring"><pre>INSTALLED check if DIST is installed</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:QUICKLOAD"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AQUICKLOAD">QUICKLOAD</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument">SYSTEM</li>    <li class="argument lambda-list-keyword">&amp;KEY</li>    <li class="argument">DIST</li>    <li class="argument">SILENT</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#94:1">Source</a>  </header> <div class="docstring"><pre>QUICKLOAD wraps QL:QUICKLOAD installing DIST first</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION QL-META:UNINSTALL"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20QL-META%3AUNINSTALL">UNINSTALL</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments">  <li class="argument">DIST-NAME</li>  </ul>  <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#83:1">Source</a>  </header> <div class="docstring"><pre>UNINSTALL a DIST-NAME using QL-DIST
+                </pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:INSTALLEDP">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3AINSTALLEDP">INSTALLEDP</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">DIST</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#65:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>INSTALLEDP check if DIST is installed thourgh QL-DIST.</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:QUICKLOAD">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3AQUICKLOAD">QUICKLOAD</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">SYSTEM</li>
+                                                <li class="argument lambda-list-keyword">&amp;KEY</li>
+                                                <li class="argument">DIST</li>
+                                                <li class="argument">SILENT</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#99:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>QUICKLOAD wraps QL:QUICKLOAD installing DIST first</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition function callable" id="FUNCTION QL-META:UNINSTALL">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span>
+                                            <h4 class="name"> <a href="#FUNCTION%20QL-META%3AUNINSTALL">UNINSTALL</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">DIST-NAME</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#88:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>UNINSTALL a DIST-NAME using QL-DIST
 
                         RETURN T when the unsinstalling it's sucessful.
                         Otherwise nil, like the dist-name it's not exists.
-    </pre></div> </article> </li> </ul> </article> </li> </ul> </section> </article> <script>window.addEventListener("DOMContentLoaded", function(){
-    var unmarkElement = function(el){
-        if(el.tagName === "mark" || el.tagName === "MARK"){
-            [].forEach.call(el.childNodes, function(child){
-                el.parentNode.insertBefore(child, el);
+                </pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition generic-function callable" id="GENERIC-FUNCTION QL-META:DIST-APROPOS">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span>
+                                            <h4 class="name"> <a href="#GENERIC-FUNCTION%20QL-META%3ADIST-APROPOS">DIST-APROPOS</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">TERM</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#128:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>DIST-APROPOS search for DIST with TERM and print them to *STANDARD-OUTPUT*</pre>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="definition generic-function callable" id="GENERIC-FUNCTION QL-META:DIST-APROPOS-LIST">
+                                        <header>
+                                            <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span>
+                                            <h4 class="name"> <a href="#GENERIC-FUNCTION%20QL-META%3ADIST-APROPOS-LIST">DIST-APROPOS-LIST</a> </h4>
+                                            <ul class="qualifiers"></ul>
+                                            <ul class="arguments">
+                                                <li class="argument">TERM</li>
+                                            </ul>
+                                            <a class="source-link" href="file:///home/lerax/.quicklisp/local-projects/quicklisp-meta/src/ql-meta.lisp#110:1">Source</a>
+                                        </header>
+                                        <div class="docstring">
+                                            <pre>DIST-APROPOS-LIST return a list of DISTs based in a matching TERM.
+
+                        This function consider the %dist-realname for search and the dist-url.
+    </pre>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        <script>window.addEventListener("DOMContentLoaded", function(){
+            var unmarkElement = function(el){
+                if(el.tagName === "mark" || el.tagName === "MARK"){
+                    [].forEach.call(el.childNodes, function(child){
+                        el.parentNode.insertBefore(child, el);
+                    });
+                    el.parentNode.removeChild(el);
+                }else if(el.parentNode.tagName === "mark"){
+                    return unmarkElement(el.parentNode);
+                }
+                return null;
+            }
+
+            var unmarkAll = function(root){
+                root = root || document;
+                [].forEach.call(root.querySelectorAll("mark"), unmarkElement);
+            }
+
+            var markElement = function(el){
+                if(el.parentNode.tagName === "mark" || el.parentNode.tagName === "MARK"){
+                    return el.parentNode;
+                } else {
+                    unmarkAll();
+                    var marked = document.createElement("mark");
+                    el.parentNode.insertBefore(marked, el);
+                    marked.appendChild(el);
+                    return marked;
+                }
+            }
+
+            var markFragmented = function(){
+                if(window.location.hash){
+                    var el = document.getElementById(decodeURIComponent(window.location.hash.substr(1)));
+                    if(el) markElement(el);
+                }
+            }
+
+            var registerXrefLink = function(link){
+                var el = document.getElementById(decodeURIComponent(link.getAttribute("href").substr(1)));
+                if(el){
+                    link.addEventListener("click", function(){
+                        markElement(el);
+                    });
+                }
+            }
+
+            var registerXrefLinks = function(root){
+                root = root || document;
+                [].forEach.call(root.querySelectorAll("a.xref"), registerXrefLink);
+            }
+
+            markFragmented();
+            registerXrefLinks();
             });
-            el.parentNode.removeChild(el);
-        }else if(el.parentNode.tagName === "mark"){
-            return unmarkElement(el.parentNode);
-        }
-        return null;
-    }
-
-    var unmarkAll = function(root){
-        root = root || document;
-        [].forEach.call(root.querySelectorAll("mark"), unmarkElement);
-    }
-
-    var markElement = function(el){
-        if(el.parentNode.tagName === "mark" || el.parentNode.tagName === "MARK"){
-            return el.parentNode;
-        } else {
-            unmarkAll();
-            var marked = document.createElement("mark");
-            el.parentNode.insertBefore(marked, el);
-            marked.appendChild(el);
-            return marked;
-        }
-    }
-
-    var markFragmented = function(){
-        if(window.location.hash){
-            var el = document.getElementById(decodeURIComponent(window.location.hash.substr(1)));
-            if(el) markElement(el);
-        }
-    }
-
-    var registerXrefLink = function(link){
-        var el = document.getElementById(decodeURIComponent(link.getAttribute("href").substr(1)));
-        if(el){
-            link.addEventListener("click", function(){
-                markElement(el);
-            });
-        }
-    }
-
-    var registerXrefLinks = function(root){
-        root = root || document;
-        [].forEach.call(root.querySelectorAll("a.xref"), registerXrefLink);
-    }
-
-    markFragmented();
-    registerXrefLinks();
-}); </script> </body> </html>
+        </script>
+    </body>
+</html>
