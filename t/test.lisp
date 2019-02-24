@@ -30,9 +30,15 @@
 (ok (typep (ql-meta:get-dist "test2") 'list)
     "get-dist string")
 
-(is ql-meta:*dists* (ql-meta:apropos-dist-list '*))
-(is ql-meta:*dists* (ql-meta:apropos-dist-list ""))
-(is 'TEST1 (caar (ql-meta:apropos-dist-list :test1)))
-(is '(TEST1 TEST2) (mapcar #'car (ql-meta:apropos-dist-list ".com")))
+(diag "== Testing: dist-apropos-list!")
+
+(is ql-meta:*dists* (ql-meta:dist-apropos-list '*)
+    "dist-apropos-list wildcard *")
+(is ql-meta:*dists* (ql-meta:dist-apropos-list "")
+    "dist-apropos-list empty string")
+(is 'TEST1 (caar (ql-meta:dist-apropos-list :test1))
+    "dist-apropos-list name search")
+(is '(TEST1 TEST2) (mapcar #'car (ql-meta:dist-apropos-list ".com"))
+    "dist-apropos-list url search")
 
 (finalize)

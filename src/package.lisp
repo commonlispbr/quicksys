@@ -12,8 +12,8 @@
            #:get-dist
            #:get-dists-urls
            #:get-dists-names
-           #:apropos-dist
-           #:apropos-dist-list
+           #:dist-apropos
+           #:dist-apropos-list
            #:quickload)
   (:documentation
    "QL-META provides a collection of tools to handle multiple quicklisp dists.
@@ -21,7 +21,7 @@
 EXAMPLES
 
 ;; search for a dist
-* (ql-meta:apropos-dist '*)
+* (ql-meta:dist-apropos '*)
 #<DIST BODGE / http://bodge.borodust.org/dist/org.borodust.bodge.txt>
 #<DIST CL21 / http://dists.cl21.org/cl21.txt>
 #<DIST ULTRALISP / http://dist.ultralisp.org>

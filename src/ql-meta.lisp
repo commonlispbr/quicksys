@@ -107,14 +107,14 @@ Otherwise nil, like the dist-name it's not exists.
       (uninstall dist))))
 
 
-(defgeneric apropos-dist-list (term)
+(defgeneric dist-apropos-list (term)
   (:documentation
-   "APROPOS-DIST-LIST return a list of DISTs based in a matching TERM.
+   "DIST-APROPOS-LIST return a list of DISTs based in a matching TERM.
 
 This function consider the %dist-realname for search and the dist-url.
  ")
   (:method ((term symbol))
-    (apropos-dist-list (symbol-name term)))
+    (dist-apropos-list (symbol-name term)))
   (:method ((term string))
     (let ((result '())
           (nterm  (remove-if (lambda (c)
@@ -125,11 +125,11 @@ This function consider the %dist-realname for search and the dist-url.
                   (search nterm (dist-url dist)))
           (push dist result))))))
 
-(defgeneric apropos-dist (term)
+(defgeneric dist-apropos (term)
   (:documentation
-   "APROPOS-DIST search for DIST with TERM and print them to *STANDARD-OUTPUT*")
+   "DIST-APROPOS search for DIST with TERM and print them to *STANDARD-OUTPUT*")
   (:method (term)
     (mapcan (lambda (dist)
                (format t "~A~%" (dist-string dist)))
-         (apropos-dist-list term))
+         (dist-apropos-list term))
     (values)))
