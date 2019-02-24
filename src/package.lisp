@@ -10,4 +10,5 @@
            #:get-dist-url
            #:get-dist-properties
            #:get-dists-urls
-           #:get-dists-names))
+           #:get-dists-names
+           #:quickload))
