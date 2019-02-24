@@ -4,7 +4,7 @@ Manoel Vilela & Lucas Vieira © 2019 MIT
 
 |#
 
-(in-package #:ql-meta)
+(in-package #:quicksys)
 
 
 ;; DIST: alist :: key -> plist
@@ -23,8 +23,8 @@ in QL-META.")
 (defun %dist-id (dist-name)
   "%DIST-ID converts DIST-NAME to an inner key representation."
   (if (typep dist-name 'string)
-      (intern (string-upcase dist-name) :ql-meta)
-      (intern (symbol-name dist-name) :ql-meta)))
+      (intern (string-upcase dist-name) :quicksys)
+      (intern (symbol-name dist-name) :quicksys)))
 
 (defun %dist-realname (dist)
   "%DIST-REALNAME generates the name of a DIST as a downcase string."
@@ -70,8 +70,8 @@ yields NIL."
   (let ((dist-obj (ql-dist:find-dist (%dist-realname dist))))
     (and dist-obj (ql-dist:installedp dist-obj))))
 
-(defun install (dist-name &key (force nil))
-  "INSTALL a dist DIST-NAME using QL-DIST.
+(defun install-dist (dist-name &key (force nil))
+  "INSTALL-DIST a dist DIST-NAME using QL-DIST.
 
 As default, use the parameters (:prompt nil :replace t) on
 ql-dist:install-dist to avoid human interaction.
@@ -87,8 +87,8 @@ raises an error."
                     (cons (dist-url dist)
                           '(:prompt nil :replace t)))))))
 
-(defun uninstall (dist-name)
-  "UNINSTALL a dist DIST-NAME using QL-DIST.
+(defun uninstall-dist (dist-name)
+  "UNINSTALL-DIST a dist DIST-NAME using QL-DIST.
 
 Yields NIL on uninstallation error and when the dist DIST-NAME were not
 installed in the first place. Otherwise, yields T."
@@ -108,10 +108,10 @@ Specifying SILENT suppresses output."
   (let* ((%dist (get-dist dist))
          (installed-before (and %dist (installedp %dist))))
     (when dist
-      (install dist))
+      (install-dist dist))
     (ql:quickload system :silent silent)
     (unless installed-before
-      (uninstall dist))))
+      (uninstall-dist dist))))
 
 
 (defgeneric dist-apropos-list (term)
