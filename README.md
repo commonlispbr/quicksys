@@ -1,42 +1,91 @@
-[![Build Status](https://travis-ci.org/commonlispbr/quicklisp-meta.svg?branch=master)](https://travis-ci.org/commonlispbr/quicklisp-meta)
+[![Build Status](https://travis-ci.org/commonlispbr/quicksys.svg?branch=master)](https://travis-ci.org/commonlispbr/quicksys)
 
-# quicklisp-meta
+# Quicksys
 
 ## Description
 
-A Quicklisp meta distribution tool to track multiple quicklisp
-distributions over world in a unique place. This software should build
-a catalog of common distributions over world like:
+Quicksys is a tool for fetching Common Lisp systems, regardless of the Quicklisp
+distribution they are catalogued in. To achieve that, this software is purposely
+built as a hardcoded catalog of famous Quicklisp distributions, including:
 
 + cl-bodge
 + cl21
 + shirakumo
 + ultralisp
 
-That way you can use to fetch first the distribution and so on the
-proper dependencies from it automatically. Today there is no automatic
-tool for softwares that are not in quicklisp xach central repository,
-so you need make a manual intervation to add different distributions.
+You may also add your own distributions at your will.
+
+## Motivation
+
+[Quicklisp](https://www.quicklisp.org/beta/) is an awesome tool for fetching
+systems, which you may use on your Common Lisp projects. However, Quicklisp only
+fetches systems from its central repository, by default. Adding a new repository
+implies manual management of distributions (here called _dists_), in order to
+fetch systems that are not in the central repo.
+
+In an effort to speed up the development of software in Common Lisp, we present
+Quicksys as a means of unifying some of the most popular distributions. This
+way, one can load specific systems, given that one also knows in which
+distribution it is; or even, one may also install a distribution on Quicklisp
+without ever manually configurating it.
 
 ## Requirements
 
-+ Common Lisp implementation
++ A Common Lisp implementation
 + Quicklisp
 
 ## How to use
 
-Suppose we want to use the nice shirakumo softwares, so what you need
-is to subscribe to shirakumo own distribution list.
+Quicksys exports some symbols which may be easily used. The following
+instructions relate to the most important operations.
 
-``` lisp
-(ql-meta:install 'shirakumo)
+### Installing a system
+
+Systems may be loaded regardless of whether its dists were installed under
+Quicklisp or not.
+
+To install a system *from a dist that was not installed*, use the following:
+
+```lisp
+(qs:quickload system-atom :dist dist-symbol)
 ```
 
-That will install the distribution based on quicklisp-client. So you
-can load from `ql:quickload` any related shirakumo software.
+Where `system-atom` is the proper identifier for the desired system, and
+`dist-symbol` is a proper symbol for a dist -- see "Installing a dist".
 
+You may also use `qs:quickload` in the same way one would use `ql:quickload`.
+The effect is the same, for dists that are already installed.
 
+### Installing a dist
+
+One may easily install a dist by using:
+
+```lisp
+(qs:install-dist dist-symbol)
+```
+
+Where `dist-symbol` is a symbol for a specific dist.
+Available dists may be listed using Quicksys' apropos command:
+
+```lisp
+(qs:dist-apropos "")
+```
+
+This outputs a list of all available dists currently hardcoded, with their
+respective symbols and URLs.
+
+After installing a dist, you may install any system using Quicklisp or Quicksys
+normally.
+
+### Removing a dist
+
+Just like installation, one may remove an already installed dist by using a
+single command:
+
+```lisp
+(qs:uninstall-dist dist-symbol)
+```
 
 ## License
 
-MIT
+This project is distributed under the MIT License.
