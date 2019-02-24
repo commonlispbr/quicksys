@@ -2,6 +2,7 @@
 
 (defpackage #:ql-meta
   (:use #:cl)
+  (:nicknames :qlm)
   (:export #:*dists*
            #:install
            #:installedp
