@@ -1,6 +1,7 @@
 (defpackage #:ql-meta/test
   (:use #:cl
-        #:prove))
+        #:prove)
+  (:documentation "Collection of unit tests for QL-META"))
 
 
 (in-package :ql-meta/test)
