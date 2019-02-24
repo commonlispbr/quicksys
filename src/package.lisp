@@ -30,7 +30,7 @@ EXAMPLES
 #<DIST SHIRAKUMO / http://dist.tymoon.eu/shirakumo.txt>
 
 ;; install a dist
-* (quicksys:install :ultralisp)
+* (quicksys:install-dist :ultralisp)
 
 
 ;; install a dist temporary just to load a system
