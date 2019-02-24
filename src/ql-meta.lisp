@@ -90,3 +90,9 @@ Otherwise nil, like the dist-name it's not exists.
     (when (and dist (installedp dist))
       (let* ((dist-obj (ql-dist:find-dist (%dist-realname dist))))
         (ql-dist:uninstall dist-obj)))))
+
+(defun quickload (system &key (dist nil) (silent nil))
+  "QUICKLOAD wraps QL:QUICKLOAD installing DIST first"
+  (when dist
+    (install dist))
+  (ql:quickload system :silent silent))
