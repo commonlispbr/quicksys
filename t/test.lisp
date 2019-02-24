@@ -30,4 +30,9 @@
 (ok (typep (ql-meta:get-dist "test2") 'list)
     "get-dist string")
 
+(is ql-meta:*dists* (ql-meta:apropos-dist-list '*))
+(is ql-meta:*dists* (ql-meta:apropos-dist-list ""))
+(is 'TEST1 (caar (ql-meta:apropos-dist-list :test1)))
+(is '(TEST1 TEST2) (mapcar #'car (ql-meta:apropos-dist-list ".com")))
+
 (finalize)
