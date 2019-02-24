@@ -5,7 +5,7 @@
     :author "Manoel Vilela & Lucas Vieira"
     :license  "MIT"
     :version "0.1.0"
-    :homepage "https://lisp.com.br/quicklisp-meta/"
+    :homepage "https://github.com/commonlispbr/quicklisp-meta"
     :bug-tracker "https://github.com/commonlispbr/quicklisp-meta/issues"
     :source-control (:git "https://github.com/commonlispbr/quicklisp-meta.git")
     :serial t
