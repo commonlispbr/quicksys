@@ -63,7 +63,7 @@ Manoel Vilela & Lucas Vieira © 2019 MIT
         collect key))
 
 (defun installedp (dist)
-  "INSTALLEDP check if DIST is installed thourgh QL-DIST."
+  "INSTALLEDP check if DIST is installed through QL-DIST."
   (let ((dist-obj (ql-dist:find-dist (%dist-realname dist))))
     (and dist-obj (ql-dist:installedp dist-obj))))
 
