@@ -5,6 +5,11 @@ IMAGE = commonlispbr/emacs:sbcl
 check:
 	@$(LISP) run-tests.lisp
 
+
+docs:
+	rm -rf doc/
+	@$(LISP) docs.lisp
+
 ci-check:
 	@docker run -t --entrypoint=/usr/bin/sbcl \
 			   -v $(shell pwd):/workspace \
