@@ -29,7 +29,7 @@ Suppose we want to use the nice shirakumo softwares, so what you need
 is to subscribe to shirakumo own distribution list.
 
 ``` lisp
-(ql-meta:subscribe 'shirakumo)
+(ql-meta:install 'shirakumo)
 ```
 
 That will install the distribution based on quicklisp-client. So you
