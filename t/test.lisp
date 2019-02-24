@@ -1,6 +1,7 @@
 (defpackage #:ql-meta/test
   (:use #:cl
-        #:prove))
+        #:prove)
+  (:documentation "Collection of unit tests for QL-META"))
 
 
 (in-package :ql-meta/test)
@@ -29,5 +30,16 @@
     "get-dist symbol invalid")
 (ok (typep (ql-meta:get-dist "test2") 'list)
     "get-dist string")
+
+(diag "== Testing: dist-apropos-list!")
+
+(is ql-meta:*dists* (ql-meta:dist-apropos-list '*)
+    "dist-apropos-list wildcard *")
+(is ql-meta:*dists* (ql-meta:dist-apropos-list "")
+    "dist-apropos-list empty string")
+(is 'TEST1 (caar (ql-meta:dist-apropos-list :test1))
+    "dist-apropos-list name search")
+(is '(TEST1 TEST2) (mapcar #'car (ql-meta:dist-apropos-list ".com"))
+    "dist-apropos-list url search")
 
 (finalize)

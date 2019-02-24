@@ -15,7 +15,7 @@ Manoel Vilela & Lucas Vieira © 2019 MIT
     (cl21      (:url "http://dists.cl21.org/cl21.txt"))
     (ultralisp (:url "http://dist.ultralisp.org"))
     (shirakumo (:url "http://dist.tymoon.eu/shirakumo.txt")))
-  "*DISTS* it's PLIST of distributions available in QL-META")
+  "*DISTS* it's a ALIST with PLIST of distributions available in QL-META")
 
 
 
@@ -30,35 +30,40 @@ Manoel Vilela & Lucas Vieira © 2019 MIT
    (symbol-name (or (getf (cadr dist) :realname)
                     (car dist)))))
 
-(defun get-dist (dist-name)
-  "GET-DIST retreive a DIST based on dist-name"
-  (assoc (%dist-id dist-name)
-         *dists*))
+(defun dist-string (dist)
+  "DIST-STRING returns the DIST in a human readable format."
+  (format nil "#<DIST ~A / ~A>"
+          (car dist)
+          (dist-url dist)))
 
-
-(defun get-dist-properties (dist)
+(defun dist-properties (dist)
   "GET-LIST-PROPERTIES return a list of properties"
   (cadr dist))
 
 
-(defun get-dist-url (dist)
-  "GET-DIST-URL return the :url of a DIST"
-  (getf (get-dist-properties dist) :url))
+(defun dist-url (dist)
+  "DIST-URL return the :url of a DIST"
+  (getf (dist-properties dist) :url))
 
+
+(defun get-dist (dist-name)
+  "GET-DIST retrieve a DIST based on DIST-NAME"
+  (assoc (%dist-id dist-name)
+         *dists*))
 
 (defun get-dists-urls (&optional (dists *dists*))
   "GET-DISTS-URLS return the urls defined in *DISTS*"
   (loop for dist in dists
-        collect (get-dist-url dist)))
+        collect (dist-url dist)))
 
 
 (defun get-dists-names (&optional (dists *dists*))
-  "GET-DISTS-NAMES return the urls defined in *DISTS*"
+  "GET-DISTS-NAMES return the names defined in *DISTS*"
   (loop for (key plist) in dists
         collect key))
 
 (defun installedp (dist)
-  "INSTALLED check if DIST is installed"
+  "INSTALLEDP check if DIST is installed through QL-DIST."
   (let ((dist-obj (ql-dist:find-dist (%dist-realname dist))))
     (and dist-obj (ql-dist:installedp dist-obj))))
 
@@ -77,7 +82,7 @@ will raises a error.
           ((and (not force)
                 (installedp dist)) t)
           (t (apply #'ql-dist:install-dist
-                    (cons (get-dist-url dist)
+                    (cons (dist-url dist)
                           '(:prompt nil :replace t)))))))
 
 (defun uninstall (dist-name)
@@ -100,3 +105,31 @@ Otherwise nil, like the dist-name it's not exists.
     (ql:quickload system :silent silent)
     (unless installed-before
       (uninstall dist))))
+
+
+(defgeneric dist-apropos-list (term)
+  (:documentation
+   "DIST-APROPOS-LIST return a list of DISTs based in a matching TERM.
+
+This function consider the %dist-realname for search and the dist-url.
+ ")
+  (:method ((term symbol))
+    (dist-apropos-list (symbol-name term)))
+  (:method ((term string))
+    (let ((result '())
+          (nterm  (remove-if (lambda (c)
+                               (eq c #\*))
+                             (string-downcase term))))
+      (dolist (dist *dists* (nreverse result))
+        (when (or (search nterm (%dist-realname dist))
+                  (search nterm (dist-url dist)))
+          (push dist result))))))
+
+(defgeneric dist-apropos (term)
+  (:documentation
+   "DIST-APROPOS search for DIST with TERM and print them to *STANDARD-OUTPUT*")
+  (:method (term)
+    (mapcan (lambda (dist)
+               (format t "~A~%" (dist-string dist)))
+         (dist-apropos-list term))
+    (values)))
