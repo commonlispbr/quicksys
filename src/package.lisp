@@ -1,7 +1,13 @@
 ;;;; package.lisp
 
 (defpackage #:ql-meta
-  (:use #:cl #:quicklisp-client)
-  (:export :*dists*
-           :get-dists-names
-           :get-dists-urls))
+  (:use #:cl)
+  (:export #:*dists*
+           #:install
+           #:installedp
+           #:uninstall
+           #:get-dist
+           #:get-dist-url
+           #:get-dist-properties
+           #:get-dists-urls
+           #:get-dists-names))
