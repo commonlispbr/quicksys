@@ -1,6 +1,6 @@
-(ql:quickload :ql-meta)
+(ql:quickload :quicksys)
 (ql:quickload :staple :silent t)
 
-(staple:generate :ql-meta
-                 :packages '(#:ql-meta))
+(staple:generate :quicksys
+                 :packages '(#:quicksys))
 (sb-ext:exit :code 0)
