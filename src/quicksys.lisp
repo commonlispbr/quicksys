@@ -39,29 +39,28 @@ in QL-META.")
           (dist-url dist)))
 
 (defun dist-properties (dist)
-  "DIST-PROPERTIES yields the list of properties of a DIST."
+  "DIST-PROPERTIES returns the list of properties of a DIST."
   (cadr dist))
 
 
 (defun dist-url (dist)
-  "DIST-URL yields the url property of a DIST"
+  "DIST-URL returns the url property of a DIST"
   (getf (dist-properties dist) :url))
 
 
 (defun get-dist (dist-name)
-  "GET-DIST retrieves a DIST based on DIST-NAME, if existing. Otherwise,
-yields NIL."
+  "GET-DIST retrieves a DIST based on DIST-NAME, if existing. Otherwise, returns NIL."
   (assoc (%dist-id dist-name)
          *dists*))
 
 (defun get-dists-urls (&optional (dists *dists*))
-  "GET-DISTS-URLS yields a list of all dist urls defined in *DISTS*"
+  "GET-DISTS-URLS returns a list of all dist urls defined in *DISTS*."
   (loop for dist in dists
         collect (dist-url dist)))
 
 
 (defun get-dists-names (&optional (dists *dists*))
-  "GET-DISTS-NAMES yields a list of all dist names defined in *DISTS*"
+  "GET-DISTS-NAMES returns a list of all dist names defined in *DISTS*"
   (loop for (key plist) in dists
         collect key))
 
@@ -71,7 +70,7 @@ yields NIL."
     (and dist-obj (ql-dist:installedp dist-obj))))
 
 (defun install-dist (dist-name &key (force nil))
-  "INSTALL-DIST a dist DIST-NAME using QL-DIST.
+  "INSTALL-DIST installs a dist DIST-NAME using QL-DIST.
 
 As default, use the parameters (:prompt nil :replace t) on
 ql-dist:install-dist to avoid human interaction.
@@ -90,8 +89,8 @@ raises an error."
 (defun uninstall-dist (dist-name)
   "UNINSTALL-DIST a dist DIST-NAME using QL-DIST.
 
-Yields NIL on uninstallation error and when the dist DIST-NAME were not
-installed in the first place. Otherwise, yields T."
+Returns NIL on uninstallation error and when the dist DIST-NAME were not
+installed in the first place. Otherwise, returns T."
   (let ((dist (get-dist dist-name)))
     (when (and dist (installedp dist))
       (let* ((dist-obj (ql-dist:find-dist (%dist-realname dist))))
@@ -116,7 +115,7 @@ Specifying SILENT suppresses output."
 
 (defgeneric dist-apropos-list (term)
   (:documentation
-   "DIST-APROPOS-LIST yields a list of DISTs based in a matching TERM.
+   "DIST-APROPOS-LIST returns a list of DISTs based in a matching TERM.
 
 This function considers %dist-realname and dist-url when searching.")
   (:method ((term symbol))
@@ -133,8 +132,7 @@ This function considers %dist-realname and dist-url when searching.")
 
 (defgeneric dist-apropos (term)
   (:documentation
-   "DIST-APROPOS searches for a dist containing TERM and prints it to
-*STANDARD-OUTPUT*.
+   "DIST-APROPOS searches for a dist containing TERM and prints it to *STANDARD-OUTPUT*.
 
 This function effectively wraps DIST-APROPOS-LIST so it is printed nicely on
 console.")
