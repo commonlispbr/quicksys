@@ -10,11 +10,13 @@ Manoel Vilela & Lucas Vieira © 2019 MIT
 ;; DIST: alist :: key -> plist
 ;; key: symbol
 (defparameter *dists*
-  '((bodge     (:url "http://bodge.borodust.org/dist/org.borodust.bodge.txt"
-                :realname org.borodust.bodge))
-    (cl21      (:url "http://dists.cl21.org/cl21.txt"))
-    (ultralisp (:url "http://dist.ultralisp.org"))
-    (shirakumo (:url "http://dist.tymoon.eu/shirakumo.txt")))
+  '((bodge         (:url "http://bodge.borodust.org/dist/org.borodust.bodge.txt"
+                    :realname org.borodust.bodge))
+    (bodge-testing (:url "http://bodge.borodust.org/dist/org.borodust.bodge.testing.txt"
+		    :realname org.borodust.bodge.testing))
+    (cl21          (:url "http://dists.cl21.org/cl21.txt"))
+    (ultralisp     (:url "http://dist.ultralisp.org"))
+    (shirakumo     (:url "http://dist.tymoon.eu/shirakumo.txt")))
   "*DISTS* is an ALIST of PLISTS, each being one of the distributions available
 in QL-META.")
 
