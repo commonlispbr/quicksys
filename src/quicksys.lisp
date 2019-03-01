@@ -15,6 +15,8 @@ Manoel Vilela & Lucas Vieira © 2019 MIT
     (bodge-testing (:url "http://bodge.borodust.org/dist/org.borodust.bodge.testing.txt"
 		    :realname org.borodust.bodge.testing))
     (cl21          (:url "http://dists.cl21.org/cl21.txt"))
+    (goheecus      (:url "http://hyperprostor.g6.cz/ql/goheecus.txt"))
+    (monkeylib     (:url "http://www.gigamonkeys.com/quicklisp/monkeylib/current.txt"))
     (ultralisp     (:url "http://dist.ultralisp.org"))
     (shirakumo     (:url "http://dist.tymoon.eu/shirakumo.txt")))
   "*DISTS* is an ALIST of PLISTS, each being one of the distributions available
